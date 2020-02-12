@@ -13,8 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("MOO")
     }
 
+    @IBAction func didPanKartView(_ sender: UIPanGestureRecognizer) {
 
+        let location = sender.location(in: view)
+        
+        print("Location: x: \(location.x), y: \(location.y)" )
+        
+        let kartView = sender.view!
+        kartView.center = location
+        
+    }
+    
 }
 
